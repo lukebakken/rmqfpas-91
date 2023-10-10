@@ -1,0 +1,18 @@
+loopback_users = none
+
+log.console = false
+log.file.level = debug
+
+listeners.tcp.default = 5674
+listeners.ssl.default = 5683
+
+management.tcp.port = 15674
+management.ssl.port = 15683
+
+management.ssl.cacertfile = @@CURDIR@@/certs/@@HOSTNAME@@/ca_certificate.pem
+management.ssl.certfile   = @@CURDIR@@/certs/@@HOSTNAME@@/server_@@HOSTNAME@@_certificate.pem
+management.ssl.keyfile    = @@CURDIR@@/certs/@@HOSTNAME@@/server_@@HOSTNAME@@_key.pem
+
+ssl_options.cacertfile    = @@CURDIR@@/certs/@@HOSTNAME@@/ca_certificate.pem
+ssl_options.certfile      = @@CURDIR@@/certs/@@HOSTNAME@@/server_@@HOSTNAME@@_certificate.pem
+ssl_options.keyfile       = @@CURDIR@@/certs/@@HOSTNAME@@/server_@@HOSTNAME@@_key.pem
