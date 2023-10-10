@@ -11,3 +11,6 @@ killall -9 beam.smp
 killall -9 epmd
 rm -rf "$script_dir/rabbitmq_server-$rmq_version/var/lib/rabbitmq/mnesia/"*
 rm -vf "$script_dir/rabbitmq_server-$rmq_version/etc/rabbitmq/enabled_plugins"
+rm -vf "$script_dir"/rabbit[123].conf
+rm -vf "$script_dir/rabbitmq-env.conf"
+rm -vf "$script_dir/inter_node_tls.config"

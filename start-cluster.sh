@@ -16,6 +16,16 @@ echo "[INFO] hostname: '$hostname'"
 
 readonly rmq_version='3.11.23'
 readonly rmq_dir="$script_dir/rabbitmq_server-$rmq_version"
+
+if [[ ! -d $rmq_dir ]]
+then
+    readonly rmq_xz="$script_dir/rabbitmq-server-generic-unix-$rmq_version.tar.xz"
+    if [[ ! -f $rmq_xz ]]
+    then
+        curl -LO "https://github.com/rabbitmq/rabbitmq-server/releases/download/v$rmq_version/rabbitmq-server-generic-unix-$rmq_version.tar.xz"
+    fi
+    tar xf "$rmq_xz"
+fi
 readonly rmq_sbin_dir="$rmq_dir/sbin"
 readonly rmq_plugins_cmd="$rmq_sbin_dir/rabbitmq-plugins"
 readonly rmq_ctl_cmd="$rmq_sbin_dir/rabbitmqctl"

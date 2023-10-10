@@ -1,16 +1,16 @@
 [
  {server, [
-           {cacertfile, "@@CURDIR@@/certs/ca_certificate.pem"},
-           {certfile,   "@@CURDIR@@/certs/server_@@HOSTNAME@@_certificate.pem"},
-           {keyfile,    "@@CURDIR@@/certs/server_@@HOSTNAME@@_key.pem"},
+           {cacertfile, "@@CURDIR@@/certs/@@HOSTNAME@@/ca_certificate.pem"},
+           {certfile,   "@@CURDIR@@/certs/@@HOSTNAME@@/server_@@HOSTNAME@@_certificate.pem"},
+           {keyfile,    "@@CURDIR@@/certs/@@HOSTNAME@@/server_@@HOSTNAME@@_key.pem"},
            {verify, verify_peer},
            {fail_if_no_peer_cert, true},
            {versions, ['tlsv1.3']}
           ]},
  {client, [
-           {cacertfile, "@@CURDIR@@/certs/ca_certificate.pem"},
-           {certfile,   "@@CURDIR@@/certs/client_@@HOSTNAME@@_certificate.pem"},
-           {keyfile,    "@@CURDIR@@/certs/client_@@HOSTNAME@@_key.pem"},
+           {cacertfile, "@@CURDIR@@/certs/@@HOSTNAME@@/ca_certificate.pem"},
+           {certfile,   "@@CURDIR@@/certs/@@HOSTNAME@@/client_@@HOSTNAME@@_certificate.pem"},
+           {keyfile,    "@@CURDIR@@/certs/@@HOSTNAME@@/client_@@HOSTNAME@@_key.pem"},
            {verify, verify_peer},
            {versions, ['tlsv1.3']}
           ]}
